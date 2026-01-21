@@ -1,4 +1,34 @@
 :root {
-    background: orange;
-    color: white;
+    --color: dodgerblue;
+    --background: #ddd;
+
+    --body-copy: 1rem;
+    --heading-copy: calc(2*var(--body-copy));
+    --gutter: 2rem;
+    --vertical: 4rem;
+}
+
+body {
+    color: var(--color);
+    background: var(--background);
+    font-size: var(--body-copy);
+    block-size: 100vh;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+}
+
+h1 {
+    font-size: var(--heading-copy);
+}
+
+ul {
+    padding-inline: var(--gutter);
+}
+
+hgroup,
+footer {
+    color: var(--background);
+    background: var(--color);
+    padding-inline: var(--gutter);
+    padding-block: var(--vertical);
 }
