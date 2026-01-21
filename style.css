@@ -1,5 +1,5 @@
 :root {
-    --color: dodgerblue;
+    --color: #383838;
     --background: #ddd;
 
     --body-copy: 1rem;
@@ -9,12 +9,20 @@
 }
 
 body {
+    font-family: sans-serif;
     color: var(--color);
     background: var(--background);
     font-size: var(--body-copy);
     block-size: 100vh;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
+    align-items: center;
+    
+}
+
+main {
+    padding-inline: var(--gutter);
+    padding-block: var(--vertical);
 }
 
 h1 {
@@ -23,6 +31,8 @@ h1 {
 
 ul {
     padding-inline: var(--gutter);
+    display: grid;
+    gap: var(--gutter);
 }
 
 hgroup,
