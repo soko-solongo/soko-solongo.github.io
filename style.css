@@ -1,44 +1,107 @@
-:root {
-    --color: #383838;
-    --background: #ddd;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    --body-copy: 1rem;
-    --heading-copy: calc(2*var(--body-copy));
-    --gutter: 2rem;
-    --vertical: 4rem;
+:root{
+    --spacing: 1.5rem;
+    --body-font: "Poppins", sans-serif;
+
+    --black: #2b2b2b;
+    --pale: #FEFDFA;
+    --faded: #F5F4EF;
+    --stroke: #E7E5E1;
+    --blue: #1E70FF;
+
+    --corner: calc(0.7*var(--spacing));
 }
+
+html{scroll-behavior: smooth;}
 
 body {
-    font-family: sans-serif;
-    color: var(--color);
-    background: var(--background);
-    font-size: var(--body-copy);
-    block-size: 100vh;
-    display: grid;
-    grid-template-rows: min-content 1fr min-content;
-    align-items: center;
-    
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: calc(1.2*var(--spacing));
+    color: var(--black);
+    background: var(--pale);
+    margin-inline: 4%;
 }
 
-main {
-    padding-inline: var(--gutter);
-    padding-block: var(--vertical);
+hgroup ol {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1fr;
+    gap: calc(1.4*var(--spacing));
+    justify-content: center;
+
+    background: var(--faded);
+    border: var(--stroke) solid 1px;
+    border-radius: var(--corner);
+
+    font-size: calc(0.7*var(--spacing));
+    font-weight: 450;
+    padding: calc(0.6*var(--spacing));
+}
+
+hgroup {
+    margin-block: calc(0.6*var(--spacing));
+    position: sticky;
+    top: 0;
+}
+
+header {
+    padding-block: calc(4*var(--spacing));
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.2*var(--spacing));
 }
 
 h1 {
-    font-size: var(--heading-copy);
+    color: var(--blue);
+    font-size: calc(2*var(--spacing));
+    font-weight: 550;
 }
 
-ul {
-    padding-inline: var(--gutter);
-    display: grid;
-    gap: var(--gutter);
+main {
+    display: flex;
+    flex-direction: column;
+    gap: calc(4*var(--spacing));
 }
 
-hgroup,
-footer {
-    color: var(--background);
-    background: var(--color);
-    padding-inline: var(--gutter);
-    padding-block: var(--vertical);
+.card {
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1fr; */
+    gap: calc(1*var(--spacing));
+
+    background: var(--faded);
+    border: var(--stroke) solid 1px;
+    border-radius: var(--corner);
+
+    padding: calc(0.6*var(--spacing));
+}
+
+h2 {
+    font-size: calc(1.6*var(--spacing));
+    font-weight: 500;
+}
+
+.tag {
+    background: var(--blue);
+    color: var(--pale);
+    font-weight: 500;
+    padding-block: calc(0.1*var(--spacing));
+    padding-inline: calc(0.5*var(--spacing));
+    display: inline;
+    border-radius: var(--corner);
+}
+
+.pills {
+    display: flex;
+    flex-direction: row;
+    gap: calc(0.4*var(--spacing));
+}
+
+img {
+    block-size: calc(12*var(--spacing));
+    border-radius: calc(0.8*var(--corner));
+    border: var(--stroke) solid 1px;
 }
