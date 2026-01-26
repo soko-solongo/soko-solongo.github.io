@@ -43,7 +43,7 @@ hgroup ol {
 hgroup {
     margin-block: calc(0.6*var(--spacing));
     position: sticky;
-    top: 0;
+    top: calc(0.6*var(--spacing));
 }
 
 header {
@@ -101,7 +101,28 @@ h2 {
 }
 
 img {
+    /* stretching!! */
     block-size: calc(12*var(--spacing));
     border-radius: calc(0.8*var(--corner));
     border: var(--stroke) solid 1px;
+}
+
+footer {
+    margin-inline: -4%;
+    margin-block-start: calc(8*var(--spacing));
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1fr;
+    gap: calc(1.2*var(--spacing));
+    justify-content: center;
+    text-align: center;
+
+    background: var(--faded);
+    border-block: var(--stroke) solid 1px;
+
+    font-size: calc(0.7*var(--spacing));
+    font-weight: 450;
+    padding: calc(1.2*var(--spacing));
+    padding-block-start: calc(2*var(--spacing));
 }
