@@ -22,9 +22,11 @@ body {
     color: var(--black);
     background: var(--pale);
     margin-inline: 4%;
+    font-size: calc(0.65*var(--spacing));
+    text-align: left;
 }
 
-hgroup ol {
+/* nav ol {
     display: flex;
     flex-direction: row;
     flex-grow: 1fr;
@@ -38,49 +40,72 @@ hgroup ol {
     font-size: calc(0.7*var(--spacing));
     font-weight: 450;
     padding: calc(0.6*var(--spacing));
-}
+} */
 
-hgroup {
+nav {
     margin-block: calc(0.6*var(--spacing));
     position: sticky;
     top: calc(0.6*var(--spacing));
+
+    ol {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1fr;
+        gap: calc(1.4*var(--spacing));
+        justify-content: center;
+
+        background: var(--faded);
+        border: var(--stroke) solid 1px;
+        border-radius: var(--corner);
+
+        font-size: calc(0.7*var(--spacing));
+        font-weight: 450;
+        padding: calc(0.6*var(--spacing));
+    }
 }
 
 header {
-    padding-block: calc(4*var(--spacing));
-    text-align: center;
     display: flex;
     flex-direction: column;
     gap: calc(1.2*var(--spacing));
+}
+
+hgroup {
+    display: flex;
+    flex-direction: column;
+    gap: calc(1.2*var(--spacing));
+    flex-shrink: space-between;
 }
 
 h1 {
     color: var(--blue);
     font-size: calc(2*var(--spacing));
     font-weight: 550;
+    line-height: calc(2*var(--spacing));
 }
 
 main {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     gap: calc(4*var(--spacing));
 }
 
-/* p {
-    max-inline-size: 60ch;
-} */
+p {
+    max-inline-size: 40ch;
+}
 
 .card {
     display: flex;
-    flex-direction: column;
-    /* flex-grow: 1fr; */
-    gap: calc(1*var(--spacing));
+    flex-direction: row;
+    gap: var(--spacing);
 
     background: var(--faded);
     border: var(--stroke) solid 1px;
     border-radius: var(--corner);
 
     padding: calc(0.6*var(--spacing));
+    align-items: center;
 }
 
 h2 {
@@ -110,10 +135,8 @@ a:hover {
 }
 
 img {
-    block-size: auto;
-    inline-size: 1fr;
-    border-radius: calc(0.8*var(--corner));
-    border: var(--stroke) solid 1px;
+    object-fit: cover;
+    object-position: center;
 }
 
 footer {
@@ -125,7 +148,6 @@ footer {
     flex-grow: 1fr;
     gap: calc(1.2*var(--spacing));
     justify-content: center;
-    text-align: center;
 
     background: var(--faded);
     border-block: var(--stroke) solid 1px;
@@ -136,7 +158,27 @@ footer {
     padding-block-start: calc(2*var(--spacing));
 }
 
-#zoom-in
+.img-controller {
+    inline-size: calc(14*var(--spacing));
+    block-size: calc(10*var(--spacing));
+    border-radius: var(--corner);
+    border: var(--stroke) solid 1px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+img {
+    inline-size: 100%;
+    block-size: 100%;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-self: top;
+    padding-block: calc(4*var(--spacing));
+    justify-content: space-between;
+}
 
 @media (width>750px) {
     :root {
