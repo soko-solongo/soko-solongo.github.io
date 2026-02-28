@@ -2,46 +2,31 @@
 
 :root{
     --spacing: 1.5rem;
-    --body-font: "Poppins", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-h3: "IBM Plex Mono", monospace;
 
-    --black: #2b2b2b;
-    --pale: #FEFDFA;
-    --faded: #F5F4EF;
-    --stroke: #E7E5E1;
-    --blue: #1E70FF;
 
-    --corner: calc(0.7*var(--spacing));
+    --color-black: #2b2b2b;
+    --color-background: #FEFDFA;
+    --color-card: #F5F4EF;
+    --color-stroke: #E7E5E1;
+    --color-blue: #1E70FF;
+
+    --corner: calc(0.4*var(--spacing));
     --gutter: calc(0.6*var(--spacing));
 }
 
 html{scroll-behavior: smooth;}
 
 body {
-    font-family: var(--body-font);
+    font-family: var(--font-body);
     font-weight: 400;
-    line-height: calc(1.2*var(--spacing));
-    color: var(--black);
-    background: var(--pale);
-    /* margin-inline: 4%; */
-    font-size: calc(0.7*var(--spacing));
+    line-height: calc(1.1*var(--spacing));
+    color: var(--color-black);
+    background: var(--color-background);
+    font-size: calc(0.65*var(--spacing));
     text-align: left;
 }
-
-/* nav ol {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1fr;
-    gap: calc(1.4*var(--spacing));
-    justify-content: center;
-
-    background: var(--faded);
-    border: var(--stroke) solid 1px;
-    border-radius: var(--corner);
-
-    font-size: calc(0.7*var(--spacing));
-    font-weight: 450;
-    padding: calc(0.6*var(--spacing));
-} */
 
 /* nav {
     margin-block: calc(0.6*var(--spacing));
@@ -66,116 +51,156 @@ body {
 } */
 
 h1 {
-    color: var(--blue);
-    font-size: calc(2*var(--spacing));
+    color: var(--color-blue);
+    font-size: calc(1.6*var(--spacing));
     font-weight: 550;
-    line-height: calc(2*var(--spacing));
+    line-height: calc(1.5*var(--spacing));
 }
 
 h2 {
-    font-size: calc(1.6*var(--spacing));
+    font-size: calc(1.5*var(--spacing));
     font-weight: 500;
+    line-height: calc(1.5*var(--spacing));
 }
 
-p {
-    max-inline-size: 40ch;
+h3 {
+    font-family: var(--font-h3);
+    font-size: calc(0.7*var(--spacing));
+    font-weight: 500;
+    color: var(--color-blue);
+    text-transform: uppercase;
+}
+
+p { max-inline-size: 40ch; }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+a:hover {
+    transition: all 0.3s ease-in-out;
+    opacity: 90%;
 }
 
 header {
     display: flex;
     flex-direction: column;
-    gap: calc(1.2*var(--spacing));
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+    text-align: right;
+
+    a {
+        color: var(--color-blue);
+        mix-blend-mode: difference;
+    }
+}
+
+main {
+    /* padding-block-start: calc(3*var(--spacing)); */
+    display: flex;
+    flex-direction: column;
+    gap: calc(6*var(--spacing));
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: sticky;
+    top: var(--gutter);
+    z-index: 1;
+}
+
+/* header + main = .content */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-self: top;
+    gap: calc(4*var(--spacing));
+    justify-content: space-between;
+    padding-inline: 4%;
+}
+
+img {
+    inline-size: auto;
+    block-size: 100%;
+    object-fit: cover;
+    object-position: top;
+
+    border-radius: var(--corner);
+    border: var(--color-stroke) solid 1px;
+    overflow: hidden;
+
+    &:last-of-type { background: var(--color-stroke);}
+}
+
+.img-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: calc(0.25*var(--gutter));
+    aspect-ratio: 3.2 / 2;
+
+    /* &:nth-child(5) { 
+        background: var(--color-stroke); 
+        border-radius: var(--corner);} */
 }
 
 hgroup {
     display: flex;
     flex-direction: column;
-    gap: calc(1.2*var(--spacing));
-    flex-shrink: space-between;
+    gap: var(--gutter);
 }
 
-main {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: calc(4*var(--spacing));
-}
 
 .card {
     display: flex;
-    flex-direction: row;
-    gap: var(--spacing);
-
-    background: var(--faded);
-    border: var(--stroke) solid 1px;
+    flex-direction: column;
+    gap: calc(2*var(--spacing));
+    background: var(--color-card);
+    border: var(--color-stroke) solid 1px;
     border-radius: var(--corner);
-
-    padding: calc(0.6*var(--spacing));
-    align-items: center;
-}
-
-.img-controller {
-    inline-size: calc(14*var(--spacing));
-    block-size: calc(10*var(--spacing));
-    border-radius: var(--corner);
-    border: var(--stroke) solid 1px;
-    object-fit: cover;
-    overflow: hidden;
-}
-
-img {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
-.tag {
-    background: var(--blue);
-    color: var(--pale);
-    font-weight: 500;
-    padding-block: calc(0.1*var(--spacing));
-    padding-inline: calc(0.5*var(--spacing));
-    display: inline;
-    border-radius: var(--corner);
+    padding: var(--gutter);
 }
 
 .pills {
     display: flex;
     flex-direction: row;
-    gap: calc(0.4*var(--spacing));
+    gap: calc(0.5*var(--gutter));
 }
 
-.content {
-    display: flex;
-    flex-direction: row;
-    align-self: top;
-    padding-block: calc(4*var(--spacing));
-    justify-content: space-between;
+.tag {
+    background: var(--color-blue);
+    font-family: var(--font-h3);
+    color: var(--color-background);
+    font-size: calc(0.5*var(--spacing));
+    font-weight: 500;
+    padding-block: calc(0.2*var(--spacing));
+    padding-inline: calc(0.5*var(--spacing));
+    display: inline;
+    border-radius: calc(1*var(--spacing));
 }
 
 footer {
-    margin-inline: -4%;
-    margin-block-start: calc(8*var(--spacing));
-
+    padding-inline: 4%;
+    padding-block: calc(1.5*var(--spacing));
     display: flex;
     flex-direction: column;
-    flex-grow: 1fr;
-    gap: calc(1.2*var(--spacing));
-    justify-content: center;
-
-    background: var(--faded);
-    border-block: var(--stroke) solid 1px;
-
-    font-size: calc(0.7*var(--spacing));
-    font-weight: 450;
-    padding: calc(1.2*var(--spacing));
-    padding-block-start: calc(2*var(--spacing));
+    gap: var(--gutter);
+    background: var(--color-card);
+    border-block-start: var(--color-stroke) solid 1px;
+    margin-block-start: calc(12*var(--spacing));
 }
 
 @media (width>750px) {
     :root {
         font-size: 110%;
+    }
+    
+    header {
+        /* padding-block: calc(2*var(--spacing)); */
     }
 }
 
