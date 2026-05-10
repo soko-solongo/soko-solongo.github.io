@@ -10,6 +10,8 @@
     --color-blue: #005EFF;
 
     --gutter: calc(0.5*var(--spacing));
+    --vertical-spacing-mobile: calc(6*var(--spacing));
+
 
     /* --m-gap: calc(0.3*var(--spacing));
     --l-gap: calc(2*var(--spacing));
@@ -23,7 +25,7 @@ html{scroll-behavior: smooth;}
 body {
     display: flex;
     flex-direction: column;
-    gap: calc(3*var(--spacing));
+    gap: var(--vertical-spacing-mobile);
     background: var(--color-white);
     color: var(--color-black);
 
@@ -32,7 +34,8 @@ body {
     line-height: var(--spacing);
     font-size: calc(0.65*var(--spacing));
     text-align: left;
-    padding: var(--gutter);
+    padding: 4%;
+    margin-block-end: 20%;
 }
 
 h1 {
@@ -43,7 +46,7 @@ h1 {
 
 h2 {
     font-size: calc(1.4*var(--spacing));
-    line-height: calc(2.2*var(--spacing));
+    line-height: calc(1.4*var(--spacing));
     font-weight: 450;
 }
 
@@ -68,7 +71,7 @@ a {
 
     p {
         font-size: calc(0.75*var(--spacing));
-        font-weight: 550;
+        font-weight: 500;
         padding-block-end: calc(0.2*var(--spacing));
     }
 }
@@ -86,147 +89,60 @@ header {
     justify-content: space-between;
 }
 
-
-
-/* 
-body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--xl-gap);
-    font-family: var(--font-body);
-    font-weight: 350;
-    line-height: var(--spacing);
-    color: var(--color-primary-text);
-    background: var(--color-background);
-    font-size: calc(0.65*var(--spacing));
-    text-align: left;
-    padding: 4%;
-}
-
-h1 {
-    font-size: calc(1.5*var(--spacing));
-    font-weight: 400;
-    line-height: calc(2*var(--spacing));
-}
-
-h2 {
-    font-size: calc(1.3*var(--spacing));
-    font-weight: 400;
-    line-height: calc(1.5*var(--spacing));
-}
-
-p { max-inline-size: 60ch; }
-
-strong { font-weight: 600; }
-em { font-style: italic; }
-
-a { 
-    transition: var(--transition);
-
-    &:hover {
-        color: var(--color-blue);
-    }
-}
-
-header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--xl-gap);
-}
-
 main {
     display: flex;
     flex-direction: column;
-    gap: var(--xl-gap);
+    gap: var(--vertical-spacing-mobile);
 }
 
-hgroup {
+.intro {
     display: flex;
     flex-direction: column;
-    gap: calc(2*var(--m-gap));
-}
+    gap: var(--gutter);
 
+    & p {
+        font-size: calc(0.8*var(--spacing));
+        font-weight: 350;
+        line-height: calc(1.4*var(--spacing));
+    }
+}
 
 .card {
     display: flex;
-    flex-direction: column;
-    gap: var(--l-gap);
-    background: var(--color-stroke);
-    border: var(--color-stroke) solid 1px;
-    padding: var(--m-gap);
-
-    hgroup {
-        padding: 4%;
-    }
+    flex-direction: column-reverse;
+    gap: var(--gutter);
 
     .pills {
         display: flex;
         flex-direction: row;
-        gap: var(--m-gap);
+        gap: var(--gutter);
         align-self: flex-start;
 
         .tag {
             background: var(--color-blue);
-            font-family: var(--font-mono);
-            color: var(--color-background);
-            font-size: calc(0.6*var(--spacing));
-            padding-block: var(--m-gap);
-            padding-inline: calc(2*var(--m-gap));
-            display: inline;
+            color: var(--color-white);
+            font-size: calc(0.5*var(--spacing));
+            padding-block: calc(0.1*var(--spacing));
+            padding-inline: calc(0.4*var(--spacing));
             border-radius: var(--spacing);
         }
     }
 
-    .img-container {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        gap: var(--m-gap);
-        aspect-ratio: 3 / 2;
-
-        & img {
-            inline-size: auto;
-            block-size: 100%;
-            object-fit: cover;
-            object-position: top;
-            border: var(--color-stroke) solid 1px;
-            overflow: hidden;
-        }
+    figure {
+        inline-size: 100%;
+        block-size: auto;
+        object-fit: cover;
+        object-position: top;
+        overflow: hidden;
     }
-}
 
-footer {
-    background: var(--color-stroke);
-    padding: var(--m-gap);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    .links {
+    hgroup {
         display: flex;
         flex-direction: column;
-        gap: var(--m-gap);
-        text-align: right;
+        gap: var(--gutter);
     }
 
 }
-
-.logo {
-    display: flex;
-    flex-direction: row;
-    gap: var(--m-gap);
-    align-items: end;
-
-    .submark {
-        inline-size: calc(1.4*var(--spacing));
-    }
-
-    p {
-        font-size: calc(0.75*var(--spacing));
-        font-weight: 450;
-        padding-block-end: calc(0.2*var(--spacing));
-    }
-}
-
 
 @media (width>750px) {
     :root { font-size: 110%;}
@@ -236,11 +152,10 @@ footer {
     .card {
         display: grid;
         grid-template-columns: 1fr 2fr;
-        gap: var(--l-gap);
+        gap: var(--gutter);
     }
 
     body {
-        padding-inline: 12%;
+        padding-inline: 8%;
     }
 }
- */
