@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
 
-
 :root{
     --spacing: 1.5rem;
     --font-body: "Geist", sans-serif;
@@ -121,7 +120,6 @@ hgroup {
             object-position: top;
             border: var(--color-stroke) solid 1px;
             overflow: hidden;
-            /* &:last-of-type { background: var(--color-stroke);} */
         }
     }
 }
