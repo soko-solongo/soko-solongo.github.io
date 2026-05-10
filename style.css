@@ -3,22 +3,92 @@
 :root{
     --spacing: 1.5rem;
     --font-body: "Geist", sans-serif;
-    --font-mono: "JetBrains Mono", monospace;
 
-    --color-primary-text: #454545;
-    --color-background: #FFFFFF;
-    --color-stroke: #F3F4F7;
+    --color-black: #454545;
+    --color-white: #FFFFFF;
+    --color-grey: #F3F4F7;
     --color-blue: #005EFF;
 
-    --m-gap: calc(0.3*var(--spacing));
+    --gutter: calc(0.5*var(--spacing));
+
+    /* --m-gap: calc(0.3*var(--spacing));
     --l-gap: calc(2*var(--spacing));
-    --xl-gap: calc(6*var(--spacing));
+    --xl-gap: calc(6*var(--spacing)); */
 
     --transition: all 0.3s ease-in-out;
 }
 
 html{scroll-behavior: smooth;}
 
+body {
+    display: flex;
+    flex-direction: column;
+    gap: calc(3*var(--spacing));
+    background: var(--color-white);
+    color: var(--color-black);
+
+    font-family: var(--font-body);
+    font-weight: 400;
+    line-height: var(--spacing);
+    font-size: calc(0.65*var(--spacing));
+    text-align: left;
+    padding: var(--gutter);
+}
+
+h1 {
+    font-size: calc(1.8*var(--spacing));
+    line-height: calc(2.5*var(--spacing));
+    font-weight: 400;
+}
+
+h2 {
+    font-size: calc(1.4*var(--spacing));
+    line-height: calc(2.2*var(--spacing));
+    font-weight: 450;
+}
+
+p { max-inline-size: 60ch; }
+
+strong { font-weight: 600; }
+em { font-style: italic; }
+
+a { 
+    transition: var(--transition);
+
+    &:hover { color: var(--color-blue);}
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    gap: var(--gutter);
+    align-items: end;
+
+    .submark { inline-size: calc(1.6*var(--spacing)); }
+
+    p {
+        font-size: calc(0.75*var(--spacing));
+        font-weight: 550;
+        padding-block-end: calc(0.2*var(--spacing));
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+    align-items: end;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+/* 
 body {
     display: flex;
     flex-direction: column;
@@ -173,4 +243,4 @@ footer {
         padding-inline: 12%;
     }
 }
-
+ */
