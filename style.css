@@ -4,15 +4,13 @@
 :root{
     --spacing: 1.5rem;
     --font-body: "Geist", sans-serif;
-    --font-h3: "JetBrains Mono", monospace;
+    --font-mono: "JetBrains Mono", monospace;
 
     --color-primary-text: #454545;
-    --color-secondary-text: #828282;
     --color-background: #FFFFFF;
     --color-stroke: #F3F4F7;
     --color-blue: #005EFF;
 
-    --s-gap: calc(0.1*var(--spacing));
     --m-gap: calc(0.3*var(--spacing));
     --l-gap: calc(2*var(--spacing));
     --xl-gap: calc(6*var(--spacing));
@@ -48,14 +46,6 @@ h2 {
     line-height: calc(1.5*var(--spacing));
 }
 
-h3 {
-    font-family: var(--font-h3);
-    font-size: calc(0.7*var(--spacing));
-    font-weight: 500;
-    color: var(--color-blue);
-    text-transform: uppercase;
-}
-
 p { max-inline-size: 60ch; }
 
 strong { font-weight: 600; }
@@ -65,7 +55,6 @@ a {
     transition: var(--transition);
 
     &:hover {
-        transition: var(--transition);
         color: var(--color-blue);
     }
 }
@@ -105,10 +94,11 @@ hgroup {
         display: flex;
         flex-direction: row;
         gap: var(--m-gap);
+        align-self: flex-start;
 
         .tag {
             background: var(--color-blue);
-            font-family: var(--font-h3);
+            font-family: var(--font-mono);
             color: var(--color-background);
             font-size: calc(0.6*var(--spacing));
             padding-block: var(--m-gap);
@@ -138,6 +128,7 @@ hgroup {
 
 footer {
     background: var(--color-stroke);
+    padding: var(--m-gap);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
