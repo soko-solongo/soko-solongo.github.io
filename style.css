@@ -159,6 +159,11 @@ main {
 
 }
 
+::selection {
+    background: var(--color-blue);
+    color: var(--color-white);
+}
+
 @media (width>750px) {
     :root { font-size: 110%; }
 }
