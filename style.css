@@ -173,7 +173,7 @@ main {
     .intro {
         gap: calc(2*var(--gutter));
 
-        p {
+        & p {
             font-size: var(--spacing);
             line-height: calc(1.7*var(--spacing));
         }
