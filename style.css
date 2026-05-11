@@ -5,8 +5,7 @@
     --font-body: "Geist", sans-serif;
 
     --color-black: #454545;
-    --color-white: #FFFFFF;
-    --color-grey: #F3F4F7;
+    --color-white: #F3F4F7;
     --color-blue: #005EFF;
 
     --gutter: calc(0.5*var(--spacing));
@@ -35,7 +34,7 @@ body {
     font-size: calc(0.65*var(--spacing));
     text-align: left;
     padding: 4%;
-    margin-block-end: 20%;
+    margin-block-end: var(--vertical-spacing-mobile);
 }
 
 h1 {
@@ -46,7 +45,7 @@ h1 {
 
 h2 {
     font-size: calc(1.4*var(--spacing));
-    line-height: calc(1.4*var(--spacing));
+    line-height: calc(1.6*var(--spacing));
     font-weight: 450;
 }
 
@@ -58,7 +57,15 @@ em { font-style: italic; }
 a { 
     transition: var(--transition);
 
-    &:hover { color: var(--color-blue);}
+    &:hover { 
+        color: var(--color-blue);
+        transition: var(--transition);
+
+        & img {
+            transition: var(--transition);
+            transform: scale(1.02);
+        }
+    }
 }
 
 .logo {
@@ -93,6 +100,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--vertical-spacing-mobile);
+
+    section { transition: opacity 0.5s ease; }
+
 }
 
 .intro {
@@ -145,17 +155,17 @@ main {
 }
 
 @media (width>750px) {
-    :root { font-size: 110%;}
+    :root { font-size: 110%; }
 }
 
 @media (width>1100px) {
+
     .card {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: var(--gutter);
+        flex-direction: row;
+        gap: 8%;
     }
 
     body {
-        padding-inline: 8%;
+        padding-inline: 16%;
     }
 }
