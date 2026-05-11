@@ -5,16 +5,12 @@
     --font-body: "Geist", sans-serif;
 
     --color-black: #454545;
-    --color-white: #F3F4F7;
+    --color-white: #f0f2f6;
     --color-blue: #005EFF;
 
     --gutter: calc(0.5*var(--spacing));
-    --vertical-spacing-mobile: calc(6*var(--spacing));
-
-
-    /* --m-gap: calc(0.3*var(--spacing));
-    --l-gap: calc(2*var(--spacing));
-    --xl-gap: calc(6*var(--spacing)); */
+    --vertical-spacing-mobile: calc(4*var(--spacing));
+    --vertical-spacing-desktop: calc(6*var(--spacing));
 
     --transition: all 0.3s ease-in-out;
 }
@@ -29,7 +25,7 @@ body {
     color: var(--color-black);
 
     font-family: var(--font-body);
-    font-weight: 400;
+    font-weight: 300;
     line-height: var(--spacing);
     font-size: calc(0.65*var(--spacing));
     text-align: left;
@@ -38,15 +34,16 @@ body {
 }
 
 h1 {
-    font-size: calc(1.8*var(--spacing));
-    line-height: calc(2.5*var(--spacing));
-    font-weight: 400;
+    font-size: calc(1.4*var(--spacing));
+    font-weight: 450;
+    line-height: calc(1.4*var(--spacing));
 }
 
 h2 {
-    font-size: calc(1.4*var(--spacing));
-    line-height: calc(1.6*var(--spacing));
+    font-size: calc(1*var(--spacing));
     font-weight: 450;
+    line-height: calc(1.2*var(--spacing));
+
 }
 
 p { max-inline-size: 60ch; }
@@ -101,7 +98,10 @@ main {
     flex-direction: column;
     gap: var(--vertical-spacing-mobile);
 
-    section { transition: opacity 0.5s ease; }
+    section { 
+        transition: filter 0.5s ease;
+        filter: grayscale(100);
+    }
 
 }
 
@@ -112,7 +112,6 @@ main {
 
     & p {
         font-size: calc(0.8*var(--spacing));
-        font-weight: 350;
         line-height: calc(1.4*var(--spacing));
     }
 }
@@ -140,16 +139,22 @@ main {
 
     figure {
         inline-size: 100%;
-        block-size: auto;
-        object-fit: cover;
-        object-position: top;
         overflow: hidden;
+
+        img {
+            inline-size: 100%;
+            block-size: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+        }
     }
 
     hgroup {
         display: flex;
         flex-direction: column;
         gap: var(--gutter);
+        justify-content: center;
     }
 
 }
@@ -162,10 +167,19 @@ main {
 
     .card {
         flex-direction: row;
-        gap: 8%;
+        gap: 5%;
+
+        figure { inline-size: 80% };
     }
 
     body {
-        padding-inline: 16%;
+        padding-inline: 20%;
+        gap: var(--vertical-spacing-desktop);
+        margin-block-end: var(--vertical-spacing-desktop);
     }
+
+    main {
+        gap: var(--vertical-spacing-desktop);
+    }
+
 }

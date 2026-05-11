@@ -1,8 +1,8 @@
 const sectionObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        entry.target.style.opacity = entry.isIntersecting ? 1 : 0;
+        entry.target.style.filter = entry.isIntersecting ? 'grayscale(0%)' : 'grayscale(100%)';
     });
-}, { rootMargin: "-20% 0% -20% 0%" });
+}, { rootMargin: "-30% 0% -30% 0%" });
 
 document.querySelectorAll("section").forEach(section => {
     sectionObserver.observe(section);
